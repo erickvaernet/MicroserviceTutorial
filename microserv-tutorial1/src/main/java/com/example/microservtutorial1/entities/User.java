@@ -1,10 +1,13 @@
 package com.example.microservtutorial1.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonFilter;
+
 import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Size;
 import java.time.LocalDate;
 
+@JsonFilter("filtroUsuario")
 public class User {
     private Integer id;
     @Size(min = 2, message = "Name must have at least 2 characters")
